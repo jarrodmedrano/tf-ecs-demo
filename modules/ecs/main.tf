@@ -30,6 +30,13 @@ resource "aws_ecs_task_definition" "ecs_task_definition" {
           hostPort : each.value.host_port
         }
       ]
+      
+      environment = [
+        {
+          name  = "NODE_ENV"
+          value = "production"
+        }
+      ]
 
       logConfiguration = {
         logDriver = "awslogs"

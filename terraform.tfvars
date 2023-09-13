@@ -1,13 +1,13 @@
 ## Application configurations
-account      = 000000
-region       = "us-east-1"
+account      = 0000000
+region       = "us-east-2"
 app_name     = "ecs-demo"
 env          = "dev"
 app_services = ["webapp", "customer", "transaction"]
 
 #VPC configurations
 cidr               = "10.10.0.0/16"
-availability_zones = ["us-east-1a", "us-east-1b"]
+availability_zones = ["us-east-2a", "us-east-2b"]
 public_subnets     = ["10.10.50.0/24", "10.10.51.0/24"]
 private_subnets    = ["10.10.0.0/24", "10.10.1.0/24"]
 
@@ -88,7 +88,7 @@ microservice_config = {
       port              = 80
       protocol          = "HTTP"
       path_pattern      = ["/*"]
-      health_check_path = "/health"
+      health_check_path = "/"
       priority          = 1
     }
     auto_scaling = {
